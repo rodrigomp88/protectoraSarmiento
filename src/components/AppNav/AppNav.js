@@ -28,11 +28,9 @@ const AppNav = (props) => {
         <i class="icofont-phone"></i> +1 5589 55488 55
       </div>
       <div class="social-links float-right">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
         <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
         <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-        <a href="#" class="skype"><i class="icofont-skype"></i></a>
-        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+        <a href="#" class="skype"><i class="icofont-youtube"></i></a>
       </div>
     </div>
   </section>
@@ -42,13 +40,14 @@ const AppNav = (props) => {
     <div class="container">
 
       <div class="logo float-left">
-        <h1 class="text-light"><Link className='nav-link' to='/'><span>Protectora</span></Link></h1>
+      <Link className='nav-link' to='/'><h1 class="text-light">Protectora</h1></Link>
         
         {/* <a href="index.html"><img src="/img/Logo.png" alt="" class="img-fluid"/></a> */}
       </div>
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
+          <li><Link className='nav-link' to='/'>Inicio</Link></li>
           <li><Link className='nav-link' to='/Gallery'>Mascotas</Link></li>
           <li><Link className='nav-link' to='MoneyBanner'>Donaciones</Link></li>
           <li><a href="#contact">Contact Us</a></li>
