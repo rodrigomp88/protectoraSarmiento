@@ -18,13 +18,13 @@ const SignOut = () => {
     
       <Link 
         to='/'
-        className="dropdown-item"
+        title="Salir"
         onClick={(event) => {
           event.preventDefault();
           signoutWithGoogle();
         }}
       >
-       Logout
+       <i class="icofont-logout"></i>
       </Link>
     
   );

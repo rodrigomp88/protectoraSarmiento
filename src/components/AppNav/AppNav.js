@@ -20,39 +20,56 @@ const AppNav = (props) => {
 
   return (
     <div>
-    
-  <section id="topbar" class="d-none d-lg-block">
-    <div class="container clearfix">
-      <div class="contact-info float-left">
-        <i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="icofont-phone"></i> +1 5589 55488 55
-      </div>
-      <div class="social-links float-right">
-        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-        <a href="#" class="skype"><i class="icofont-youtube"></i></a>
-      </div>
-    </div>
-  </section>
 
-  
-  <header id="header">
-    <div class="container">
-
-      <div class="logo float-left">
-      <Link className='nav-link' to='/'><h1 class="text-light">Protectora</h1></Link>
-        
-        {/* <a href="index.html"><img src="/img/Logo.png" alt="" class="img-fluid"/></a> */}
+      <section id="topbar" class="d-none d-lg-block">
+        <div class="container clearfix">
+          <div class="contact-info float-left">
+            <i class="icofont-envelope"></i><a href="mailto:info@example.com">info@example.com</a>
+            <i class="icofont-phone"></i> +54 9 3412 76-9534
       </div>
+          <div class="social-links float-right">
+            <a href="#" class="facebook"><i class="icofont-facebook bx-fade-up-hover"></i></a>
+            <a href="#" class="instagram"><i class="icofont-instagram bx-fade-up-hover"></i></a>
+            <a href="#" class="youtube"><i class="icofont-youtube bx-fade-up-hover"></i></a>
+          </div>
+        </div>
+      </section>
 
-      <nav class="nav-menu float-right d-none d-lg-block">
-        <ul>
-          <li><Link className='nav-link' to='/'>Inicio</Link></li>
-          <li><Link className='nav-link' to='/Gallery'>Mascotas</Link></li>
-          <li><Link className='nav-link' to='MoneyBanner'>Donaciones</Link></li>
-          <li><a href="#contact">Contact Us</a></li>
-          <li>{profile.isAdmin === true &&
-              <Link className='nav-link' to='/Admin'>Administrador</Link>}</li>
+
+      <header id="header">
+        <div class="container">
+
+          <div class="logo float-left">
+            <h1 class="text-light"><Link to='/'>Protectora</Link></h1>
+
+            {/* <a href="index.html"><img src="/img/Logo.png" alt="" class="img-fluid"/></a> */}
+          </div>
+
+          <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+              <li><Link to='/'>Inicio</Link></li>
+              <li><Link to='/Gallery'>Mascotas</Link></li>
+              <li><Link to='MoneyBanner'>Donaciones</Link></li>
+              <li>
+                {profile.isAdmin === true &&
+                  <Link title="Administrar" to='/Admin'>
+                    <i class="icofont-gear-alt"></i>
+                  </Link>}
+              </li>
+              <li>
+                {profile.isAdmin === true  &&
+                  <Link title="Perfil" to='/MiPerfil'>
+                    <i class="icofont-id"></i>
+                  </Link>
+                }
+              </li>
+              <li>
+                {profile.isAdmin === true  &&
+                  <SignOut />
+                }
+              </li>
+              {/* <li>{profile.isAdmin === true &&
+              <Link to='/Admin'>Administrador</Link>}</li>
               <li><NavLink to='/entrar'>Ingresar</NavLink></li>
           <li class="drop-down"><Nav2 />
             <ul>
@@ -61,39 +78,13 @@ const AppNav = (props) => {
               
                 
             </ul>
-          </li>
-          
-        </ul>
-      </nav>
+          </li> */}
 
-    </div>
-  </header>
-    {/* <Container className='p-0' fluid={true}>
-      <NavBar className='border-bottom' bg='light' expand='lg'>
-        <NavBar.Brand href="/">
-          <img src="/img/Logo.png"
-            width="201px"
-            height="103px"
-            alt=""
-            loading="lazy"
-          />
-        </NavBar.Brand>
+            </ul>
+          </nav>
 
-        <NavBar.Toggle className='border-0' aria-controls='navbar-toggle' />
-        <NavBar.Collapse id='navbar-toggle'>
-          <Nav className='ml-auto'>
-            <Link className='nav-link' to='/AboutUs'>Historia</Link>
-            <Link className='nav-link' to='/Volunteering'>Voluntariado</Link>
-            <Link className='nav-link' to='/Gallery'>Mascotas</Link>
-            <Link className='nav-link' to='/Gallery'>Tienda</Link>
-            <Link className='nav-link' to='MoneyBanner'>Donaciones</Link>
-            {profile.isAdmin === true &&
-              <Link className='nav-link' to='/Admin'>Administrador</Link>}
-          </Nav>
-          <Nav2 />
-        </NavBar.Collapse>
-      </NavBar>
-    </Container> */}
+        </div>
+      </header>
     </div>
   );
 };
