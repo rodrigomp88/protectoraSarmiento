@@ -1,0 +1,23 @@
+.carousel {
+  height: auto;
+  width: 100%;
+}
+.texto {
+  padding: 1%;
+  width: 40%;
+}
+.carru {
+  display: flex;
+  align-items: center;
+  padding: 6%;
+}
+
+@media (max-width: 600px) {
+  .carru {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .carousel {
+    height: auto;
+  }
+}
