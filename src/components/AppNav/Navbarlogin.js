@@ -10,7 +10,7 @@ const Navbar2 = (props) => {
   const { auth, profile } = props;
   const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav>
       <div className="container"> 
       {profile.isAdmin === true && <Admin />}      
         {links}
