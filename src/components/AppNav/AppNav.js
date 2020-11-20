@@ -42,7 +42,7 @@ const AppNav = (props) => {
           <div class="logo float-left">
             <h1 class="text-light"><Link to='/'>Protectora</Link></h1>
 
-            {/* <a href="index.html"><img src="/img/Logo.png" alt="" class="img-fluid"/></a> */}
+            {/* <img src="assets/img/logo.png" alt="" class="img-fluid"/> */}
           </div>
 
           <nav class="nav-menu float-right d-none d-lg-block">
@@ -50,36 +50,33 @@ const AppNav = (props) => {
               <li><Link to='/'>Inicio</Link></li>
               <li><Link to='/Gallery'>Mascotas</Link></li>
               <li><Link to='MoneyBanner'>Donaciones</Link></li>
-              <li>
-                {profile.isAdmin === true &&
-                  <Link title="Administrar" to='/Admin'>
-                    <i class="icofont-gear-alt"></i>
-                  </Link>}
-              </li>
-              <li>
-                {profile.isAdmin === true  &&
-                  <Link title="Perfil" to='/MiPerfil'>
-                    <i class="icofont-id"></i>
-                  </Link>
-                }
-              </li>
-              <li>
-                {profile.isAdmin === true  &&
-                  <SignOut />
-                }
-              </li>
-              {/* <li>{profile.isAdmin === true &&
-              <Link to='/Admin'>Administrador</Link>}</li>
-              <li><NavLink to='/entrar'>Ingresar</NavLink></li>
-          <li class="drop-down"><Nav2 />
-            <ul>
-              <li><a href="#"><Link className="dropdown-item" to="/MiPerfil">Ver mi Perfil</Link>
-        <SignOut /></a></li>
-              
-                
-            </ul>
-          </li> */}
 
+              {/* {profile.isAdmin === true &&
+                <li class="drop-down"><a>Administrador</a>
+                  <ul>
+                    <li>
+                      <Link title="Administrar" to='/Admin'>
+                        <i class="icofont-gear-alt"> Administar</i>
+                      </Link>
+                    </li><hr></hr>
+                    <li>
+                      <Link title="Perfil" to='/MiPerfil'>
+                        <i class="icofont-id"> Perfil</i>
+                      </Link>
+                    </li><hr></hr>
+                    <li>
+                      <SignOut />
+                    </li>
+                  </ul>
+                </li>
+              } */}
+              {/* <li>
+                {profile.isAdmin === true &&
+                  <Link className='nav-link' to='/Admin'>Administrador</Link>}
+              </li> */}
+              <li>
+                <Nav2 />
+              </li>
             </ul>
           </nav>
 
