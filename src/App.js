@@ -52,6 +52,7 @@ import Agregarpet from './components/Gallery/Agregarpet'
 // import PetId from './components/Info/PetId'
 import UserProfile from './components/Users/UserProfile'
 import EditProfile from './components/Users/EditProfile'
+import AboutUs from './components/AboutUs/AboutUs'
 import ResetPassword from './UI/Routes/ResetPassword.jsx'
 // import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
 
@@ -97,6 +98,7 @@ function App() {
           {/* COMPONENTES */}
           <Route exact path="/" render={() => <Home bool={booleano} />} />
           <Route exact path="/Gallery" component={Petimage} />
+          <Route exact path="/AboutUs" component={AboutUs} />
           <Route exact path="/Volunteering" component={Volunteering} />
           <Route exact path="/Adoptions" component={Adoptions} />
           <Route exact path="/Adoptions/Form/:id" component={Formulario} />
