@@ -13,19 +13,19 @@ import MoneyDonations from "./components/Donations/MoneyDonations";
 import Supplies from "./components/Donations/SuppliesDonations";
 import Adoptions from "./components/Adoptions/Adoptions";
 import Footer from "./components/Footer/Footer";
-import SuppliesBanner from './components/Donations/SuppliesBanner'
-import MoneyBanner from './components/Donations/MoneyBanner'
-import Petimage from './components/Gallery/Petimage'
-import UsuariosAdmin from './components/Administrator/Tablas/UsuariosAdmin';
-import MascotasAdmin from './components/Administrator/Tablas/AnimalAdmin';
-import AdopcionesAdmin from './components/Administrator/Tablas/AdopcionesAdmin'
-import VoluntariosAdmin from './components/Administrator/Tablas/VoluntariosAdmin';
-import PetDetail from './components/Info/PetDetail'
+import SuppliesBanner from "./components/Donations/SuppliesBanner";
+import MoneyBanner from "./components/Donations/MoneyBanner";
+import Petimage from "./components/Gallery/Petimage";
+import UsuariosAdmin from "./components/Administrator/Tablas/UsuariosAdmin";
+import MascotasAdmin from "./components/Administrator/Tablas/AnimalAdmin";
+import AdopcionesAdmin from "./components/Administrator/Tablas/AdopcionesAdmin";
+import VoluntariosAdmin from "./components/Administrator/Tablas/VoluntariosAdmin";
+import PetDetail from "./components/Info/PetDetail";
 
 //CRUD
 
-import CreatePet from "./components/PetCRUD/createpet"
-import UpdatePet from "./components/PetCRUD/editpet"
+import CreatePet from "./components/PetCRUD/createpet";
+import UpdatePet from "./components/PetCRUD/editpet";
 
 // RESTO DE COSAS
 import Dashboard from "./components/dashboard/Dashboard";
@@ -41,18 +41,18 @@ import Info from "./components/Info/Info.js";
 import PrivateRoute from "./UI/Components/PrivateRoute";
 import Todos from "./UI/Routes/Todos";
 //import SignIn from "./UI/Routes/SignIn";
-import SignOut from "./UI/Routes/SignOut"
+import SignOut from "./UI/Routes/SignOut";
 import SignInmail from "./UI/Routes/SignInemail";
 import CrearUsuario from "./UI/Routes/CrearUsuario";
-import NotFound from './components/404/Notfound'
+import NotFound from "./components/404/Notfound";
 
-import Test from './components/Gallery/test'
-import FileUpload from './components/Gallery/FileUpload'
-import Agregarpet from './components/Gallery/Agregarpet'
+import Test from "./components/Gallery/test";
+import FileUpload from "./components/Gallery/FileUpload";
+import Agregarpet from "./components/Gallery/Agregarpet";
 // import PetId from './components/Info/PetId'
-import UserProfile from './components/Users/UserProfile'
-import EditProfile from './components/Users/EditProfile'
-import ResetPassword from './UI/Routes/ResetPassword.jsx'
+import UserProfile from "./components/Users/UserProfile";
+import EditProfile from "./components/Users/EditProfile";
+import ResetPassword from "./UI/Routes/ResetPassword.jsx";
 // import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
 
 // import Contactus from './components/sendemail'
@@ -64,11 +64,11 @@ function App() {
 
   const handleclick = () => {
     if (!booleano) {
-      setBooleano(true)
+      setBooleano(true);
     } else {
-      setBooleano(false)
+      setBooleano(false);
     }
-  }
+  };
 
   useEffect(() => {
     // const unmount = db.collection("pet").onSnapshot((snapshot) => {
@@ -78,17 +78,15 @@ function App() {
     //   });
     //   setAlbums(tempAlbums);
     // });
-    setBooleano(false)
+    setBooleano(false);
     // return unmount;
   }, []);
-
 
   return (
     <BrowserRouter>
       <div className="App">
         <AppNav />
         <Switch>
-
           {/* Prueba back */}
           <PrivateRoute path="/todos">
             <Todos />
@@ -110,13 +108,16 @@ function App() {
 
           <Route exact path="/SuppliesBanner" component={SuppliesBanner} />
 
-
           <Route exact path="/salir" component={SignOut} />
           <Route exact path="/entrar" component={SignInmail} />
           <Route exact path="/crearusuario" component={CrearUsuario} />
 
           {/* CRUD */}
-          <Route exact path="/Admin" render={() => <PetCrud handle={handleclick} bool={booleano} />} />
+          <Route
+            exact
+            path="/Admin"
+            render={() => <PetCrud handle={handleclick} bool={booleano} />}
+          />
           <Route exact path="/Admin/Usuarios" component={UsuariosAdmin} />
           <Route exact path="/Admin/Mascotas" component={MascotasAdmin} />
           <Route exact path="/Admin/Adopciones" component={AdopcionesAdmin} />
@@ -140,11 +141,9 @@ function App() {
           <Route component={NotFound} />
         </Switch>
         <Footer />
-
       </div>
     </BrowserRouter>
   );
 }
-
 
 export default App;

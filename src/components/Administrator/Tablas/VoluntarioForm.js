@@ -3,12 +3,13 @@ import { db } from "../../../index";
 
 const PetForm = (props) => {
   const initialStateValues = {
-    name: '',
-    age: '',
-    email: '',
-    address: '',
-    contribution: '',
-    type: ''
+    name: "",
+    age: "",
+    email: "",
+    address: "",
+    contribution: "",
+    type: "",
+    state: "",
   };
 
   const [values, setValues] = useState(initialStateValues);
@@ -16,15 +17,11 @@ const PetForm = (props) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+    console.log("Value", values.state);
   };
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-
-
     props.addOrEditLink(values);
     setValues({ ...initialStateValues });
   };
@@ -44,9 +41,12 @@ const PetForm = (props) => {
 
   return (
     <div className="text-center mt-5">
-
       <h3>Crear nuevo voluntario</h3>
-      <form id="formlogin" class="form-signin justify-content-center" onSubmit={handleSubmit}>
+      <form
+        id="formlogin"
+        class="form-signin justify-content-center"
+        onSubmit={handleSubmit}
+      >
         <div className="form-row">
           <div className="form-group col-md-6">
             <input
@@ -103,20 +103,48 @@ const PetForm = (props) => {
 
           <div className="btn-group mr-2" role="group">
             <div className="dropdown">
-              <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button
+                class="btn btn-primary btn-block dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 Tipo
-        </button>
+              </button>
               <button className="btn btn-primary btn-block">
                 {props.currentId === "" ? "Guardar" : "Actualizar"}
               </button>
-              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
                 <button className="dropdown-item">Animales de paso</button>
                 <button className="dropdown-item">En el refugio</button>
                 <button className="dropdown-item">Rescatando</button>
               </div>
             </div>
-          </div>
 
+            <select
+              input
+              name="size"
+              id="inputState"
+              onChange={handleInputChange}
+              className="form-control"
+            >
+              <option defaultValue>Estado de Solicitud</option>
+              <option name="state" value="Aceptado">
+                Aceptado
+              </option>
+              <option name="state" value="Pendiente">
+                Pendiente
+              </option>
+              <option name="state" value="Rechazado">
+                Rechazado
+              </option>
+            </select>
+          </div>
         </div>
       </form>
     </div>
