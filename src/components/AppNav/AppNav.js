@@ -50,11 +50,12 @@ const AppNav = (props) => {
               <Link to="/">Protectora</Link>
             </h1>
 
-            {/* <a href="index.html"><img src="/img/Logo.png" alt="" class="img-fluid"/></a> */}
+            {/* <img src="assets/img/logo.png" alt="" class="img-fluid"/> */}
           </div>
 
           <nav class="nav-menu float-right d-none d-lg-block">
             <ul>
+<<<<<<< HEAD
               <li>
                 <Link to="/">Inicio</Link>
               </li>
@@ -93,6 +94,38 @@ const AppNav = (props) => {
                 
             </ul>
           </li> */}
+=======
+              <li><Link to='/'>Inicio</Link></li>
+              <li><Link to='/Gallery'>Mascotas</Link></li>
+              <li><Link to='MoneyBanner'>Donaciones</Link></li>
+
+              {/* {profile.isAdmin === true &&
+                <li class="drop-down"><a>Administrador</a>
+                  <ul>
+                    <li>
+                      <Link title="Administrar" to='/Admin'>
+                        <i class="icofont-gear-alt"> Administar</i>
+                      </Link>
+                    </li><hr></hr>
+                    <li>
+                      <Link title="Perfil" to='/MiPerfil'>
+                        <i class="icofont-id"> Perfil</i>
+                      </Link>
+                    </li><hr></hr>
+                    <li>
+                      <SignOut />
+                    </li>
+                  </ul>
+                </li>
+              } */}
+              {/* <li>
+                {profile.isAdmin === true &&
+                  <Link className='nav-link' to='/Admin'>Administrador</Link>}
+              </li> */}
+              <li>
+                <Nav2 />
+              </li>
+>>>>>>> main
             </ul>
           </nav>
         </div>

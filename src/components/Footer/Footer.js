@@ -96,7 +96,6 @@ const Footer = (props) => {
               <ul>
                 <li>
                   <Nav2 />
-                  <SignOut />
                 </li>
                 <li>
                   {profile.isAdmin === true &&

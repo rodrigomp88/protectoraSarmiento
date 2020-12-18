@@ -24,7 +24,7 @@ const SignOut = () => {
           signoutWithGoogle();
         }}
       >
-       <i class="icofont-logout"></i>
+       <i class="icofont-logout"> Salir</i>
       </Link>
     
   );

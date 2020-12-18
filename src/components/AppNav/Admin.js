@@ -4,7 +4,7 @@ import React from "react";
 const Admin = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
 
         <button
@@ -29,7 +29,7 @@ const Admin = () => {
           <br />
         </div>
       </nav>
-      <br />
+      <br /> */}
     </div>
   );
 };
